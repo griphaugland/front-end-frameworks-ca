@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 function Footer() {
   return (
-    <footer className="secondary-bg">
+    <footer className="secondary-bg min-h-36 flex items-center">
       <div className="flex justify-center items-center h-16 gap-4 text-gray-800">
         <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
           <FacebookIcon className="mx-2" />

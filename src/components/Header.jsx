@@ -7,11 +7,13 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Logo from "../assets/logo.svg";
+import { useProducts } from "../store";
 
 function Header() {
   const [mobile, setMobile] = useState(false);
   const [toggle, setToggle] = useState(false);
   const [animate, setAnimate] = useState(false);
+  const cart = useProducts((state) => state.cart);
 
   useEffect(() => {
     if (window.innerWidth < 768) {
@@ -34,19 +36,27 @@ function Header() {
           <Link to="">
             <img src={Logo} alt="logo" className="w-20" />
           </Link>
-          <button
-            onClick={() => {
-              setToggle(!toggle);
-              setAnimate(!toggle);
-            }}
-            className="text-2xl font-bold"
-          >
-            {toggle ? (
-              <CloseIcon style={{ fontSize: "2rem" }} />
-            ) : (
-              <MenuIcon style={{ fontSize: "2rem" }} />
-            )}
-          </button>
+          <div className="flex items-center gap-6">
+            <Link className="carticon-container" to="cart">
+              <span className="cart-icon-number">
+                {cart.length > 0 ? cart.length : 0}
+              </span>
+              <ShoppingCartOutlinedIcon />
+            </Link>
+            <button
+              onClick={() => {
+                setToggle(!toggle);
+                setAnimate(!toggle);
+              }}
+              className="text-2xl font-bold"
+            >
+              {toggle ? (
+                <CloseIcon style={{ fontSize: "2rem" }} />
+              ) : (
+                <MenuIcon style={{ fontSize: "2rem" }} />
+              )}
+            </button>
+          </div>
         </div>
         {toggle && (
           <nav

@@ -1,4 +1,5 @@
 import React from "react";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 function ProductList(products) {
   console.log(products.products.data);
@@ -21,7 +22,7 @@ function ProductList(products) {
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className=" bg-white outline-blue-950 outline-1 outline text-blue-950 px-2 py-1 rounded text-xs"
+                    className=" bg-white outline-blue-950 text-blue-950 px-2 py-1 rounded text-xs"
                   >
                     {tag}
                   </span>
@@ -34,11 +35,16 @@ function ProductList(products) {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 w-full justify-between">
-            <p className="text-xl text-blue-950 font-bold mt-4">{item.price}</p>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-              Add to Cart
-            </button>
+          <div className="flex items-center gap-2 w-full justify-between mt-1">
+            <p className="text-xl text-black font-bold">{item.price}</p>
+            <div className="flex items-center gap-2 w-full justify-end mt-1">
+              <button className=" secondary-button px-4 py-2 rounded-3xl">
+                <AddShoppingCartIcon />
+              </button>
+              <button className="secondary-bg primary-button text-black px-4 py-2 rounded-3xl">
+                View
+              </button>
+            </div>
           </div>
         </article>
       ))}
