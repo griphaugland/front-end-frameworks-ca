@@ -33,7 +33,7 @@ function Header() {
     return (
       <header className="top-0 w-full sticky p-4 bg-white">
         <div className="flex justify-between">
-          <Link to="">
+          <Link to="" className="max-w-16 max-h-16">
             <img src={Logo} alt="logo" className="w-20" />
           </Link>
           <div className="flex items-center gap-6">
@@ -101,7 +101,7 @@ function Header() {
   } else {
     return (
       <header className="flex flex-row justify-between items-center p-4">
-        <Link to="">
+        <Link to="" className="max-w-16 max-h-16">
           <img src={Logo} alt="logo" className="w-20" />
         </Link>
         <nav className="text-l font-bold flex flex-row gap-6 mr-6">
@@ -114,7 +114,13 @@ function Header() {
             Products
           </Link>
           <Link className="flex items-center justify-start gap-1" to="cart">
-            <ShoppingCartOutlinedIcon /> Cart
+            <div className="carticon-container">
+              <span className="cart-icon-number-desktop">
+                {cart.length > 0 ? cart.length : 0}
+              </span>
+              <ShoppingCartOutlinedIcon />
+            </div>
+            Cart
           </Link>
         </nav>
       </header>

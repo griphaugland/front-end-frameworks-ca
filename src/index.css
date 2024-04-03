@@ -37,7 +37,7 @@
   width: 100vw;
   height: 89svh !important;
   gap: 3rem !important;
-  animation: circleFill 1s ease-in-out forwards;
+  animation: circleFill 0.5s ease-in-out forwards;
 }
 .loader__icon {
   animation: rotate 0.5s ease-in-out infinite;
@@ -90,8 +90,24 @@ footer {
   justify-content: center;
   border-radius: 100%;
   background-color: white;
-  border: 2px solid black;
-  color: black;
+  border: 2px solid #6f675e;
+  color: #6f675e;
+}
+.cart-icon-number-desktop {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  height: 15px;
+  width: 15px;
+  font-size: 12px;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: white;
+  border: 2px solid #4b4b4b;
+  color: #3e3e3e;
 }
 
 .product-container {
@@ -111,4 +127,7 @@ footer {
   .product-container {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
+}
+.remove-from-cart {
+  color: rgb(214, 80, 80);
 }

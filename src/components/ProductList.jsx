@@ -1,5 +1,5 @@
 import React from "react";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import AddToCart from "./addToCartButton.jsx";
 
 function ProductList(products) {
   console.log(products.products.data);
@@ -38,12 +38,13 @@ function ProductList(products) {
           <div className="flex items-center gap-2 w-full justify-between mt-1">
             <p className="text-xl text-black font-bold">{item.price}</p>
             <div className="flex items-center gap-2 w-full justify-end mt-1">
-              <button className=" secondary-button px-4 py-2 rounded-3xl">
-                <AddShoppingCartIcon />
-              </button>
-              <button className="secondary-bg primary-button text-black px-4 py-2 rounded-3xl">
+              <AddToCart product={item} />
+              <a
+                href={"products/" + item.id}
+                className="secondary-bg primary-button text-black px-4 py-2 rounded-3xl"
+              >
                 View
-              </button>
+              </a>
             </div>
           </div>
         </article>
