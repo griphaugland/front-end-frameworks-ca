@@ -3,6 +3,7 @@ import "../App.css";
 import Loader from "../components/Loader";
 import { useProducts } from "../store";
 import ProductList from "../components/ProductList";
+import Error from "../components/Error";
 
 function Products() {
   const error = useProducts((state) => state.error);
@@ -13,7 +14,7 @@ function Products() {
   }, []);
 
   if (error) {
-    return <>There was an issue getting the products from the server</>;
+    return <Error errorResponse={error} />;
   }
   if (loading) {
     return <Loader />;

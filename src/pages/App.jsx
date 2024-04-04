@@ -3,19 +3,20 @@ import "../App.css";
 import Loader from "../components/Loader";
 import { useProducts } from "../store";
 import ProductList from "../components/ProductList";
+import HeroSection from "../components/HeroSection";
+import Error from "../components/Error";
 
 function App() {
   const error = useProducts((state) => state.error);
   const loading = useProducts((state) => state.loading);
   const products = useProducts((state) => state.products);
+  let url = "https://v2.api.noroff.dev/online-shop/products";
   useEffect(() => {
-    useProducts
-      .getState()
-      .getProducts(`https://v2.api.noroff.dev/online-shop/${searchValue}`);
+    useProducts.getState().getProducts(url);
   }, []);
 
   if (error) {
-    return <>There was an issue getting the products from the server</>;
+    return <Error errorResponse={error} />;
   }
   if (loading) {
     return <Loader />;
@@ -23,8 +24,7 @@ function App() {
 
   return (
     <div className="flex flex-col">
-      <h1>Homepage</h1>
-      {/* <ProductList products={products} /> */}
+      <HeroSection products={products} />
     </div>
   );
 }

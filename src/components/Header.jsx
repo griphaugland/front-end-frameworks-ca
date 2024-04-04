@@ -33,11 +33,17 @@ function Header() {
     return (
       <header className="top-0 w-full sticky p-4 bg-white">
         <div className="flex justify-between">
-          <Link to="" className="max-w-16 max-h-16">
+          <Link to="" className="w-16 h-16">
             <img src={Logo} alt="logo" className="w-20" />
           </Link>
           <div className="flex items-center gap-6">
-            <Link className="carticon-container" to="cart">
+            <Link
+              className="carticon-container"
+              onClick={() => {
+                setToggle(false);
+              }}
+              to="cart"
+            >
               <span className="cart-icon-number">
                 {cart.length > 0 ? cart.length : 0}
               </span>

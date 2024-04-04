@@ -14,11 +14,17 @@ export const useProducts = create(
           set({ loading: true });
           const res = await fetch(url);
           const data = await res.json();
+          if (!res.ok) {
+            console.log(res);
+            set({
+              error: { statusCode: res.statusText, status: res.status },
+            });
+          }
           set({ loading: false });
           set({ products: data });
         } catch (e) {
-          set({ error: true, message: e.message });
-          console.log(e.message);
+          console.log(e);
+          set({ error: { statusCode: e.statusCode, status: e.status } });
         }
       },
       cart: [],
