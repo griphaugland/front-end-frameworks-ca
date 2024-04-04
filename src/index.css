@@ -36,7 +36,7 @@
   font-size: 1.5rem;
   width: 100vw;
   height: 92svh !important;
-  gap: 3rem !important;
+  gap: 6rem !important;
   animation: circleFill 0.5s ease-in-out forwards;
 }
 .loader__icon {
@@ -87,8 +87,8 @@ a:hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   font-size: 12px;
   display: flex;
   font-weight: 700;
@@ -96,13 +96,13 @@ a:hover {
   justify-content: center;
   border-radius: 100%;
   background-color: white;
-  border: 2px solid #6f675e;
-  color: #6f675e;
+  border: 1px solid #1d1d1d;
+  color: #1d1d1d;
 }
 .cart-icon-number-desktop {
   position: absolute;
   left: 40%;
-  top: 40%;
+  top: 48%;
   height: 15px;
   width: 15px;
   font-size: 12px;
@@ -112,8 +112,11 @@ a:hover {
   justify-content: center;
   border-radius: 100%;
   background-color: white;
-  border: 2px solid #4b4b4b;
-  color: #3e3e3e;
+  border: 1px solid #1d1d1d;
+  color: #1d1d1d;
+}
+.no-hover-effect:hover {
+  filter: none !important;
 }
 
 .product-container {

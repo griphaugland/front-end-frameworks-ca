@@ -33,7 +33,7 @@ function Header() {
     return (
       <header className="top-0 w-full sticky p-4 bg-white">
         <div className="flex justify-between">
-          <Link to="" className="w-16 h-16">
+          <Link to="" className="w-16 h-16 no-hover-effect">
             <img src={Logo} alt="logo" className="w-20" />
           </Link>
           <div className="flex items-center gap-6">
@@ -67,12 +67,12 @@ function Header() {
         {toggle && (
           <nav
             className={
-              "text-xl font-bold flex flex-col gap-2 my-4 " +
+              "text-xl font-bold flex flex-col my-4 " +
               (animate ? "animateMenu" : "")
             }
           >
             <Link
-              className="flex items-center justify-start gap-1 min-w-48"
+              className="flex items-center justify-start gap-1 min-w-36"
               to=""
               onClick={() => {
                 setToggle(!toggle);
@@ -82,7 +82,7 @@ function Header() {
               Home
             </Link>
             <Link
-              className="flex items-center justify-start gap-1 min-w-48"
+              className="flex items-center justify-start gap-1 min-w-36"
               to="products"
               onClick={() => {
                 setToggle(!toggle);
@@ -92,7 +92,7 @@ function Header() {
               Products
             </Link>
             <Link
-              className="flex items-center justify-start gap-1 min-w-48"
+              className="flex items-center justify-start gap-1 min-w-36"
               to="cart"
               onClick={() => {
                 setToggle(!toggle);
