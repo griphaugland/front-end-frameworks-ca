@@ -113,21 +113,57 @@ footer {
 .product-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
   gap: 1.5rem;
-  justify-content: center;
+  place-items: center stretch;
+}
+.product-container article {
+  border-radius: 10px;
+  max-width: 350px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.product-container article:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08); /* Enhanced shadow on hover */
+}
+.product-title {
+  transition: 0.1s ease-in-out;
+}
+.product-title:hover {
+  color: rgb(75, 75, 75);
+}
+
+button {
+  transition: 0.1s ease-in-out;
+}
+.product-container img:hover {
+  filter: brightness(0.95);
 }
 .product-container img {
+  transition: 0.1s ease-in-out;
   width: 100%;
   height: auto;
   display: flex;
-  height: 400px;
+  height: 250px;
 }
 @media (max-width: 600px) {
   .product-container {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200, 1fr));
+  }
+  .product-container article {
+    max-width: 600px;
   }
 }
 .remove-from-cart {
   color: rgb(214, 80, 80);
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Adjust this as needed */
 }

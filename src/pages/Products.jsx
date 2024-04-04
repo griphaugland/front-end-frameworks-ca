@@ -4,14 +4,12 @@ import Loader from "../components/Loader";
 import { useProducts } from "../store";
 import ProductList from "../components/ProductList";
 
-function App() {
+function Products() {
   const error = useProducts((state) => state.error);
   const loading = useProducts((state) => state.loading);
   const products = useProducts((state) => state.products);
   useEffect(() => {
-    useProducts
-      .getState()
-      .getProducts(`https://v2.api.noroff.dev/online-shop/${searchValue}`);
+    useProducts.getState().getProducts("https://v2.api.noroff.dev/online-shop");
   }, []);
 
   if (error) {
@@ -22,11 +20,10 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col">
-      <h1>Homepage</h1>
-      {/* <ProductList products={products} /> */}
-    </div>
+    <>
+      <ProductList products={products} />
+    </>
   );
 }
 
-export default App;
+export default Products;

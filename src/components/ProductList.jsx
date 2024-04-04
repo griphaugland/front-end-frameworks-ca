@@ -1,5 +1,6 @@
 import React from "react";
 import AddToCart from "./addToCartButton.jsx";
+import { Link } from "react-router-dom";
 
 function ProductList(products) {
   console.log(products.products.data);
@@ -10,15 +11,27 @@ function ProductList(products) {
           key={item.id}
           className="flex flex-col items-start justify-between"
         >
-          <img
-            src={item.image.url}
-            alt="product"
-            className="w-48 h-48 object-cover"
-          />
+          <Link className="w-full h-full" to={`./${item.id}`}>
+            <img
+              src={item.image.url}
+              alt="product"
+              className="w-48 h-22 object-cover"
+            />
+          </Link>
           <div className="flex items-start gap-2 w-full flex-col justify-between min-h-36">
             <div className="flex items-start flex-col gap-2 w-full">
-              <h2 className="text-xl font-bold mt-4">{item.title}</h2>
-              <div className="flex gap-2">
+              <Link
+                className="text-xl px-3 product-title font-bold mt-4"
+                to={`./${item.id}`}
+                title={item.title}
+              >
+                {item.title
+                  ? item.title.length > 40
+                    ? item.title.substring(0, 40) + "..."
+                    : item.title
+                  : "No title found"}
+              </Link>
+              <div className="flex px-3 gap-2">
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
@@ -30,14 +43,30 @@ function ProductList(products) {
               </div>
             </div>
 
-            <p className="text-sm font-extralight mb-auto text-gray-500">
-              {item.description}
+            <p
+              className="text-sm font-extralight px-3 mb-auto text-gray-500 truncate"
+              title={item.description}
+            >
+              {item.description
+                ? item.description.length > 70
+                  ? item.description.substring(0, 100) + "..."
+                  : item.description
+                : "No description"}
             </p>
           </div>
 
-          <div className="flex items-center gap-2 w-full justify-between mt-1">
-            <p className="text-xl text-black font-bold">{item.price}</p>
-            <div className="flex items-center gap-2 w-full justify-end mt-1">
+          <div className="flex px-3 pb-3 items-center gap-2 w-full justify-between mt-1">
+            <div className="flex items-start flex-col-reverse gap-0">
+              <p className="text-xl text-red-700 font-bold">
+                {item.discountedPrice}
+              </p>
+              <p className="text-sm text-black line-through">{item.price}</p>
+              {/* <p className="text-xl text-black font-bold">{item.price}</p>
+            <p className="text-xl text-black font-bold">
+              {item.discountedPrice}
+            </p> */}
+            </div>
+            <div className="flex items-center gap-1 w-full justify-end mt-1">
               <AddToCart product={item} />
               <a
                 href={"products/" + item.id}
