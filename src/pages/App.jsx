@@ -10,7 +10,7 @@ function App() {
   const error = useProducts((state) => state.error);
   const loading = useProducts((state) => state.loading);
   const products = useProducts((state) => state.products);
-  let url = "https://v2.api.noroff.dev/online-shop/products";
+  let url = "https://v2.api.noroff.dev/online-shop";
   useEffect(() => {
     useProducts.getState().getProducts(url);
   }, []);
@@ -23,7 +23,7 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <HeroSection products={products} />
     </div>
   );

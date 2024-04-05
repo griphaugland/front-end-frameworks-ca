@@ -7,7 +7,7 @@ function Layout({ children }) {
   return (
     <div className="min-h-svh flex flex-col ">
       <Header />
-      <main className="flex flex-grow p-4">
+      <main className="flex flex-col flex-grow">
         <Outlet />
       </main>
       <Footer />

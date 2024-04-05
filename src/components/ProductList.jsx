@@ -6,7 +6,7 @@ function ProductList(products) {
   console.log(products.products.data);
 
   return (
-    <div className="product-container">
+    <div className="product-container p-4">
       {products.products.data.map((item) => (
         <article
           key={item.id}
@@ -56,34 +56,26 @@ function ProductList(products) {
             </p>
           </div>
 
-          <div className="flex px-3 pb-3 items-center gap-2 w-full justify-between mt-1">
+          <div className="flex px-3 pb-3 gap-2 w-full justify-between mt-1">
             {item.discountedPrice < item.price ? (
               <div className="flex items-start flex-col-reverse gap-0">
-                <p className="text-xl text-red-700 font-bold">
-                  {item.discountedPrice.length > 5
-                    ? item.discountedPrice.substring(0, 5) + "..."
-                    : item.discountedPrice}
+                <p className="text-xl current-price text-red-700 font-bold">
+                  {item.discountedPrice}
                 </p>
                 <p className="text-sm text-black line-through">{item.price}</p>
               </div>
             ) : (
               <div className="flex items-start flex-col-reverse gap-0">
-                <p className="text-xl text-black font-bold">
+                <p className="text-xl flex-end current-price text-black font-bold">
                   {item.discountedPrice}
                 </p>
               </div>
             )}
-            {/* <div className="flex items-start flex-col-reverse gap-0">
-                        <p className="text-xl text-red-700 font-bold">
-                            {item.discountedPrice}
-                        </p>
-                        <p className="text-sm text-black line-through">{item.price}</p>
-                    </div> */}
             <div className="flex items-center gap-1 w-full justify-end mt-1">
               <AddToCart product={item} />
               <Link
                 to={`./${item.id}`}
-                className="secondary-bg primary-button text-black px-4 py-2 rounded-3xl"
+                className="secondary-bg primary-button text-black px-4 py-2 rounded-lg"
               >
                 View
               </Link>

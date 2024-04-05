@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
+import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -93,6 +94,15 @@ function Header() {
             </Link>
             <Link
               className="flex items-center justify-start gap-1 min-w-36"
+              to="contact"
+              onClick={() => {
+                setToggle(!toggle);
+              }}
+            >
+              <ContactPageOutlinedIcon style={{ fontSize: "1.5rem" }} /> Contact
+            </Link>
+            <Link
+              className="flex items-center justify-start gap-1 min-w-36"
               to="cart"
               onClick={() => {
                 setToggle(!toggle);
@@ -118,6 +128,10 @@ function Header() {
           <Link className="flex items-center justify-start gap-1" to="products">
             <CategoryOutlinedIcon />
             Products
+          </Link>
+          <Link className="flex items-center justify-start gap-1" to="contact">
+            <ContactPageOutlinedIcon />
+            Contact
           </Link>
           <Link className="flex items-center justify-start gap-1" to="cart">
             <div className="carticon-container">

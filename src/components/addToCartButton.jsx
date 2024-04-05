@@ -31,7 +31,7 @@ function AddToCart({ product }) {
     return (
       <button
         onClick={handleRemoveFromCart}
-        className="secondary-button px-4 py-2 rounded-3xl"
+        className="secondary-button px-4 py-2 rounded"
       >
         <RemoveShoppingCartIcon className="remove-from-cart" />
       </button>
@@ -40,7 +40,7 @@ function AddToCart({ product }) {
     return (
       <button
         onClick={handleAddToCart}
-        className="secondary-button px-4 py-2 rounded-3xl"
+        className="secondary-button px-4 py-2 rounded-lg"
       >
         <AddShoppingCartIcon />
       </button>
