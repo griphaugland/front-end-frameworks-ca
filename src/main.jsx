@@ -7,6 +7,8 @@ import Layout from "./layout/Layout";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
+import SingleProduct from "./pages/SingleProduct";
+import NotFoundPage from "./components/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -14,9 +16,17 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "", element: <App /> },
-      { path: "products", element: <Products /> },
+      {
+        path: "products",
+        element: <Products />,
+        children: [{ path: "products/:id", element: <SingleProduct /> }],
+      },
       { path: "cart", element: <Cart /> },
       { path: "contact", element: <Contact /> },
+      {
+        path: "*",
+        element: <NotFoundPage />,
+      },
     ],
   },
 ]);
