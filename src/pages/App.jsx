@@ -24,7 +24,9 @@ function App() {
 
   return (
     <div className="flex flex-col w-full">
-      <HeroSection products={products} />
+      <HeroSection products={products} productNumber={2} />
+      <HeroSection products={products} productNumber={6} />
+      <HeroSection products={products} productNumber={14} />
     </div>
   );
 }

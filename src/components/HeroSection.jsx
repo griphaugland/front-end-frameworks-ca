@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function HeroSection({ products }) {
-  const [currentIndex, setCurrentIndex] = useState(2);
+function HeroSection({ products, productNumber }) {
+  const [currentIndex, setCurrentIndex] = useState(productNumber);
   const [count, setCount] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
