@@ -67,7 +67,7 @@ footer {
 }
 .primary-button {
   border: 2px solid #ecdac7 !important;
-  color: black !important;
+  color: #816a51 !important;
   transition: 0.1s ease-in-out;
 }
 
@@ -141,6 +141,11 @@ a:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadow */
   border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.searchbar {
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadow */
 }
 
 .product-container article:hover {
