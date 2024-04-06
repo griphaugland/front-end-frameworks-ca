@@ -4,7 +4,6 @@ import Loader from "../components/Loader";
 import { useProducts } from "../store";
 import ProductList from "../components/ProductList";
 import Error from "../components/Error";
-import Search from "../components/Search";
 
 function Products() {
   const error = useProducts((state) => state.error);
@@ -23,7 +22,6 @@ function Products() {
 
   return (
     <>
-      <Search />
       <ProductList products={products} />
     </>
   );

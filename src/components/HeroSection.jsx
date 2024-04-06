@@ -13,7 +13,6 @@ function HeroSection({ products, productNumber }) {
     }, 3000);
     return () => clearInterval(interval);
   });
-  console.log(products);
   const showNextProduct = () => {
     const nextIndex = (currentIndex + 1) % products.data.length;
     setCurrentIndex(nextIndex);
