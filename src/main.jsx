@@ -9,6 +9,8 @@ import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import SingleProduct from "./pages/SingleProduct";
 import NotFoundPage from "./components/NotFoundPage";
+import Checkout from "./pages/CheckoutSuccess.jsx";
+import CheckoutSuccess from "./pages/CheckoutSuccess";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,8 @@ const router = createBrowserRouter([
       },
       { path: "products/:id", element: <SingleProduct /> },
       { path: "cart", element: <Cart /> },
+      { path: "checkout", element: <Checkout /> },
+      { path: "checkout-success", element: <CheckoutSuccess /> },
       { path: "contact", element: <Contact /> },
       {
         path: "*",

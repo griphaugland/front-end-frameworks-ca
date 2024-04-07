@@ -97,10 +97,10 @@ function ProductList({ products }) {
               {item.discountedPrice < item.price ? (
                 <div className="flex items-start flex-col-reverse gap-0">
                   <p className="text-xl current-price text-red-700 font-bold">
-                    ${item.discountedPrice}
+                    {item.discountedPrice}
                   </p>
                   <p className="text-sm text-black line-through">
-                    ${item.price}
+                    {item.price}
                   </p>
                 </div>
               ) : (

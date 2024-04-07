@@ -31,7 +31,6 @@ function SingleProduct() {
       }
       setLoading(false);
       setProduct(data.data);
-      console.log(data.data);
     } catch (e) {
       setError({ error: { statusCode: e.statusCode, status: e.status } });
     }
@@ -53,7 +52,7 @@ function SingleProduct() {
     return <Loader />;
   }
   return (
-    <div className="max-w-4xl mx-auto my-4 p-4  rounded-lg">
+    <div className="max-w-4xl mx-auto my-4 p-4 pt-0 mt-0 rounded-lg">
       <div className="md:flex md:items-center">
         <div className="md:w-1/2">
           <img
@@ -67,7 +66,6 @@ function SingleProduct() {
           <Rating value={product.rating} />
           <p className="mt-4 text-gray-600">{product.description}</p>
           <div className="mt-4">
-            <span className="text-lg font-semibold">Price:</span>
             <span
               className={`ml-2 text-lg ${
                 product.discountedPrice < product.price
@@ -75,11 +73,11 @@ function SingleProduct() {
                   : "font-bold"
               }`}
             >
-              ${product.price}
+              {product.price}
             </span>
             {product.discountedPrice < product.price && (
               <span className="ml-2 text-xl font-bold text-red-500">
-                ${product.discountedPrice}
+                {product.discountedPrice}
               </span>
             )}
           </div>
