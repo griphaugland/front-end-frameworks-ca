@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Form() {
@@ -18,15 +17,16 @@ function Form() {
       [name]: value,
     }));
   };
+
   return (
-    <form className="flex flex-col checkout-form">
+    <form className="w-full mx-auto flex flex-col   px-2">
       <input
         type="text"
         placeholder="Name"
         name="name"
         value={customerInfo.name}
         onChange={handleInputChange}
-        className="p-2 mt-2"
+        className="shadow appearance-none border rounded w-full mb-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
       />
       <input
         type="email"
@@ -34,7 +34,7 @@ function Form() {
         name="email"
         value={customerInfo.email}
         onChange={handleInputChange}
-        className="p-2 mt-2"
+        className="shadow appearance-none border rounded w-full mb-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
       />
       <input
         type="text"
@@ -42,7 +42,7 @@ function Form() {
         name="address"
         value={customerInfo.address}
         onChange={handleInputChange}
-        className="p-2 mt-2"
+        className="shadow appearance-none border rounded w-full mb-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
       />
       <input
         type="text"
@@ -50,7 +50,7 @@ function Form() {
         name="city"
         value={customerInfo.city}
         onChange={handleInputChange}
-        className="p-2 mt-2"
+        className="shadow appearance-none border rounded w-full py-2 mb-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
       />
       <input
         type="text"
@@ -58,7 +58,7 @@ function Form() {
         name="zip"
         value={customerInfo.zip}
         onChange={handleInputChange}
-        className="p-2 mt-2"
+        className="shadow appearance-none border rounded w-full mb-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
       />
       <Link
         to="/checkout-success"

@@ -2,73 +2,86 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 function Contact() {
-  // Initialize the useForm hook
   const {
-    register, // This function allows you to register an input
-    handleSubmit, // This function handles form submission
-    formState: { errors }, // This object contains form state and errors
+    register,
+    handleSubmit,
+    formState: { errors },
   } = useForm();
 
-  // Function to be called on form submission
   const onSubmit = (data) => {
     console.log(data);
   };
 
   return (
-    <div>
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {/* Full name input */}
-        <div>
-          <label htmlFor="fullName">Full Name</label>
+    <div className="w-full max-w-md mx-auto">
+      <h2 className="text-2xl font-bold text-start px-2 md:mt-6">Contact Us</h2>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col mt-4 px-2"
+      >
+        <div className="mb-4">
           <input
+            placeholder="Full name"
             id="fullName"
             {...register("fullName", { required: true, minLength: 3 })}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
           {errors.fullName && (
-            <p>Full name is required and must be at least 3 characters.</p>
+            <p className="text-red-500 text-xs italic">
+              Full name is required and must be at least 3 characters.
+            </p>
           )}
         </div>
 
-        {/* Subject input */}
-        <div>
-          <label htmlFor="subject">Subject</label>
+        <div className="mb-4">
           <input
+            placeholder="Subject"
             id="subject"
             {...register("subject", { required: true, minLength: 3 })}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
           {errors.subject && (
-            <p>Subject is required and must be at least 3 characters.</p>
+            <p className="text-red-500 text-xs italic">
+              Subject is required and must be at least 3 characters.
+            </p>
           )}
         </div>
 
-        {/* Email input */}
-        <div>
-          <label htmlFor="email">Email</label>
+        <div className="mb-4">
           <input
+            placeholder="Email"
             id="email"
             type="email"
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
           {errors.email && (
-            <p>Email is required and must be a valid email address.</p>
+            <p className="text-red-500 text-xs italic">
+              Email is required and must be a valid email address.
+            </p>
           )}
         </div>
 
-        {/* Body textarea */}
-        <div>
-          <label htmlFor="body">Body</label>
+        <div className="mb-6">
           <textarea
             id="body"
+            placeholder="Write your message here..."
             {...register("body", { required: true, minLength: 3 })}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           ></textarea>
           {errors.body && (
-            <p>Body is required and must be at least 3 characters.</p>
+            <p className="text-red-500 text-xs italic">
+              Body is required and must be at least 3 characters.
+            </p>
           )}
         </div>
 
-        {/* Submit button */}
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          className="checkout-button p-2 mt-4 text-center mb-6 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );

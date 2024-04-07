@@ -85,7 +85,7 @@ function Checkout() {
       </div>
       {cart.length > 0 && (
         <div className="checkout-info w-full mx-2 px-4 md:w-1/2 mt-8 md:mt-0 md:ml-4">
-          <h2 className="text-xl text-start font-bold py-2">
+          <h2 className="text-xl text-start px-3 font-bold py-2">
             Checkout Information
           </h2>
           <Form />
