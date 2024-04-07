@@ -8,19 +8,19 @@ function Rating({ value }) {
     for (let i = 1; i <= totalStars; i++) {
       if (i <= value) {
         stars.push(
-          <span key={i} className="text-yellow-500">
+          <span key={i} className="text-yellow-500 text-lg">
             ★
           </span>
         );
       } else if (i === Math.ceil(value) && !Number.isInteger(value)) {
         stars.push(
-          <span key={i} className="text-yellow-500">
+          <span key={i} className="text-yellow-500 text-lg">
             ☆
           </span>
         );
       } else {
         stars.push(
-          <span key={i} className="text-gray-300">
+          <span key={i} className="text-gray-300 text-lg">
             ☆
           </span>
         );
@@ -32,7 +32,7 @@ function Rating({ value }) {
   return (
     <div className="rating">
       {renderStars()}
-      <span className="ml-2 text-sm text-gray-500">({value})</span>
+      <span className="ml-2 text-gray-500 text-lg">({value})</span>
     </div>
   );
 }
