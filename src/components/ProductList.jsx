@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import AddToCart from "./addToCartButton.jsx";
 import { Link } from "react-router-dom";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import AddToCart from "./addToCartButton";
 
 function ProductList({ products }) {
   const [search, setSearch] = useState("");
@@ -34,7 +34,8 @@ function ProductList({ products }) {
           <SearchOutlinedIcon />
         </label>
         <input
-          className="w-full px-1 py-2 outline-none rounded-md"
+          className="w-full px-1 py-2 outline-none rounded-md placeholder-gray-400"
+          placeholder="Search products..."
           name="search"
           id="search-input"
           onChange={handleSearchValue}
@@ -67,6 +68,7 @@ function ProductList({ products }) {
                       : item.title
                     : "No title found"}
                 </Link>
+
                 <div className="flex px-3 gap-2">
                   {item.tags.map((tag) => (
                     <span
@@ -95,24 +97,24 @@ function ProductList({ products }) {
               {item.discountedPrice < item.price ? (
                 <div className="flex items-start flex-col-reverse gap-0">
                   <p className="text-xl current-price text-red-700 font-bold">
-                    {item.discountedPrice}
+                    ${item.discountedPrice}
                   </p>
                   <p className="text-sm text-black line-through">
-                    {item.price}
+                    ${item.price}
                   </p>
                 </div>
               ) : (
                 <div className="flex items-start flex-col-reverse gap-0">
                   <p className="text-xl flex-end current-price text-black font-bold">
-                    {item.discountedPrice}
+                    ${item.discountedPrice}
                   </p>
                 </div>
               )}
               <div className="flex items-center gap-1 w-full justify-end mt-1">
-                <AddToCart product={item} />
+                <AddToCart product={item} size={"small"} />
                 <Link
                   to={`./${item.id}`}
-                  className="primary-button text-black px-4 py-2 rounded-lg"
+                  className="secondary-button-large text-black px-4 py-2 rounded-lg"
                 >
                   View
                 </Link>
