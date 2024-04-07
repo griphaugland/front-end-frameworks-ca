@@ -27,7 +27,7 @@ function ProductList({ products }) {
   return (
     <>
       <form
-        className="bg-white h-12 mx-4 max-w-full md:self-center md:w-2/5 searchbar rounded-md flex flex-row items-center p-4 justify-center gap-4"
+        className="bg-white md:mt-6 h-12 mx-4 max-w-full md:self-center md:w-2/5 searchbar rounded-md flex flex-row items-center p-4 justify-center gap-4"
         onSubmit={handleSubmit}
       >
         <label className="text-blue-950" htmlFor="search">

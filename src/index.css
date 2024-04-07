@@ -27,10 +27,15 @@ header {
   z-index: 10000;
 }
 
+.logo {
+  width: 80px;
+  height: 55px;
+}
+
 .animateMenu {
   position: fixed;
   left: 0%;
-  top: 7svh !important;
+  top: 5svh !important;
   background-color: #1a2033 !important;
   display: flex !important;
   align-items: center !important;
@@ -38,7 +43,7 @@ header {
   color: white;
   font-size: 1.5rem;
   width: 100vw;
-  height: 92svh !important;
+  height: 95svh !important;
   gap: 6rem !important;
   animation: circleFill 0.5s ease-in-out forwards;
 }

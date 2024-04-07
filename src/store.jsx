@@ -34,6 +34,7 @@ export const useProducts = create(
         set((state) => ({
           cart: state.cart.filter((p) => p.id !== product.id),
         })),
+      clearCart: () => set({ cart: [] }),
     }),
     {
       name: "cart-storage",

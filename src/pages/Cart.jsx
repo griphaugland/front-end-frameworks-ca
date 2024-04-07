@@ -20,11 +20,11 @@ function Checkout() {
   }
 
   return (
-    <div className="checkout-page flex flex-col md:flex-row">
+    <div className="checkout-page md:mt-6 flex flex-col md:flex-row">
       <div className="cart-overview mx-2 px-4 w-full md:w-1/2">
         {cart.length === 0 ? (
           <div className="flex flex-col justify-center">
-            <h2 className="text-xl font-bold text-start border-b-2 border-blue-950 py-2">
+            <h2 className="text-xl text-start border-b-2 border-blue-950 py-2">
               Your Cart ({cart.length})
             </h2>
             <h3 className="text-center mt-4 text-gray-500">
@@ -62,9 +62,7 @@ function Checkout() {
                     <h4 className="font-bold">{item.title}</h4>
                     <span
                       className={`text-lg ${
-                        item.discountedPrice < item.price
-                          ? "line-through"
-                          : "font-bold"
+                        item.discountedPrice < item.price ? "line-through" : ""
                       }`}
                     >
                       ${item.price}
