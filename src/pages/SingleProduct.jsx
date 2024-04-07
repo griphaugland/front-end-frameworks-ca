@@ -52,13 +52,13 @@ function SingleProduct() {
     return <Loader />;
   }
   return (
-    <div className="max-w-4xl mx-auto my-4 p-4 pt-0 mt-0 rounded-lg">
+    <div className="max-w-4xl md:mt-16 mx-auto my-4 p-4 pt-0 mt-0 rounded-lg">
       <div className="md:flex md:items-center">
         <div className="md:w-1/2">
           <img
             src={product.image.url}
             alt={product.image.alt}
-            className="rounded-lg"
+            className="rounded-lg h-96 w-full object-cover"
           />
         </div>
         <div className="md:w-1/2 md:pl-10">

@@ -7,7 +7,6 @@ import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import Logo from "../assets/logo.svg";
 import { useProducts } from "../store";
 
 function Header() {
@@ -34,8 +33,8 @@ function Header() {
     return (
       <header className="top-0 w-full sticky p-4 bg-white">
         <div className="flex justify-between">
-          <Link to="" className="w-16 h-16 no-hover-effect">
-            <img src={Logo} alt="logo" className="w-20" />
+          <Link to="" className=" no-hover-effect">
+            <h1 className="text-2xl font-bold">Whimzy</h1>
           </Link>
           <div className="flex items-center gap-6">
             <Link
@@ -117,10 +116,10 @@ function Header() {
   } else {
     return (
       <header className="flex flex-row justify-between items-center p-4">
-        <Link to="" className="max-w-16 max-h-16">
-          <img src={Logo} alt="logo" className="w-20" />
+        <Link to="" className="">
+          <h1 className="text-2xl font-bold">Whimzy</h1>
         </Link>
-        <nav className="text-l font-bold flex flex-row gap-6 mr-6">
+        <nav className="text-l flex flex-row gap-6 mr-6">
           <Link className="flex items-center justify-start gap-1" to="">
             <HomeOutlinedIcon />
             Home
