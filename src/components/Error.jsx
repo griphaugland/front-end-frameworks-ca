@@ -8,7 +8,6 @@ function Error({ errorResponse }) {
       <h5 className="text-lg">
         Error Code: <b>{errorResponse.status}</b>
       </h5>
-      <p>Please try again</p>
       <p className="error__message">{errorResponse.statusCode}</p>
     </div>
   );
