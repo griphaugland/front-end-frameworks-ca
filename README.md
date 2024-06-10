@@ -1,7 +1,5 @@
 # Whimzy Auction House
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
-
 Whimzy is an online auction house platform where users can bid on various items. The platform aims to provide a seamless and engaging user experience for auction enthusiasts.
 
 ## Description
